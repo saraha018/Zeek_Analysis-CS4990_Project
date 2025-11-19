@@ -24,7 +24,7 @@ The project pipeline consists of the following stages:
 
 - **Feature Dataset Creation:** The engineered features are output into a .csv (Features CSV) file.
 
-- **Machine Learning (ML):** The final .csv dataset is used to train, test, and validate a Machine Learning model (e.g., a classifier like Random Forest or an autoencoder for anomaly detection).
+- **Machine Learning (ML):** The final .csv dataset is used to train, test, and validate a Machine Learning model (e.g., a classifier like Random Forest for anomaly detection).
 
 ## Prerequisites
 
@@ -32,7 +32,14 @@ The project pipeline consists of the following stages:
 
 - Python 3.x environment.
 
-- Required Python libraries (e.g., pandas, scikit-learn).
+- Required Python libraries
+  - numpy>=1.21.0
+  - pandas>=1.3.0
+  - scikit-learn>=1.0.0
+  - matplotlib>=3.4.0
+  - seaborn>=0.11.0
+  - tqdm>=4.62.0
+  - joblib>=1.0.0
 
 ## How to execute
 

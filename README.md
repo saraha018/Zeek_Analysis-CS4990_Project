@@ -45,7 +45,7 @@ The project pipeline consists of the following stages:
 
 ### Python dependencies
 
-pip install pandas scikit-learn
+pip install pandas scikit-learn numpy matplotlib seaborn tqdm joblib
 
 ### Process PCAP with Zeek
 

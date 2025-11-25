@@ -11,9 +11,8 @@ import csv
 import os
 
 
-# ----------------------------------------
+
 # IMPORTANT FIELDS PER LOG TYPE
-# ----------------------------------------
 IMPORTANT_FIELDS = {
     "conn": [
         "ts", "uid", "id.orig_h", "id.orig_p", "id.resp_h", "id.resp_p",
@@ -74,9 +73,8 @@ IMPORTANT_FIELDS = {
 }
 
 
-# ----------------------------------------
+
 # AUTO-NAME HANDLER
-# ----------------------------------------
 def get_unique_path(path):
     if not os.path.exists(path):
         return path
@@ -89,9 +87,7 @@ def get_unique_path(path):
         counter += 1
 
 
-# ----------------------------------------
 # MAIN PARSER
-# ----------------------------------------
 def parse_zeek_log(input_path):
     separator = "\t"
     fields = None
@@ -128,9 +124,7 @@ def parse_zeek_log(input_path):
     return fields, fixed
 
 
-# ----------------------------------------
 # FILTER IMPORTANT FIELDS
-# ----------------------------------------
 def filter_fields(log_type, fields, rows):
     wanted = IMPORTANT_FIELDS.get(log_type)
     if not wanted:
@@ -152,9 +146,8 @@ def filter_fields(log_type, fields, rows):
     return present, new_rows
 
 
-# ----------------------------------------
+
 # MAIN EXECUTION
-# ----------------------------------------
 def main():
     parser = argparse.ArgumentParser(description="Convert Zeek logs to filtered CSV.")
     parser.add_argument("input_log", help="Path to Zeek .log file (conn.log, dns.log, etc.)")
@@ -180,3 +173,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

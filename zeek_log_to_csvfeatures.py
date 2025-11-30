@@ -86,6 +86,17 @@ IMPORTANT_FIELDS = {
         "id.resp_h", "id.resp_p", "proto",
         "facility", "severity", "message",
     ],
+    "x509": [
+    "ts", "fingerprint",
+    "certificate.version", "certificate.serial",
+    "certificate.subject", "certificate.issuer",
+    "certificate.not_valid_before", "certificate.not_valid_after",
+    "certificate.key_alg", "certificate.sig_alg",
+    "certificate.key_type", "certificate.key_length",
+    "certificate.exponent",
+    "basic_constraints.ca", "basic_constraints.path_len",
+    "host_cert", "client_cert",
+    ],
 }
 
 
@@ -189,6 +200,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

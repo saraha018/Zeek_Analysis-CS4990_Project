@@ -70,6 +70,17 @@ IMPORTANT_FIELDS = {
         "id.resp_h", "id.resp_p",
         "name", "addl", "notice", "peer", "source",
     ],
+     "analyzer": [
+        "analyzer_name",
+        "uid",
+        "fuid",
+        "id.orig_h",
+        "id.orig_p",
+        "id.resp_h",
+        "id.resp_p",
+        "proto",
+        "failure_reason",
+    ], 
 }
 
 
@@ -173,4 +184,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

@@ -71,16 +71,21 @@ IMPORTANT_FIELDS = {
         "name", "addl", "notice", "peer", "source",
     ],
      "analyzer": [
-        "analyzer_name",
-        "uid",
-        "fuid",
-        "id.orig_h",
-        "id.orig_p",
-        "id.resp_h",
-        "id.resp_p",
-        "proto",
-        "failure_reason",
+        "analyzer_name", "uid", "fuid", 
+        "id.orig_h", "id.orig_p", "id.resp_h",
+        "id.resp_p", "proto", "failure_reason",
     ], 
+        "ssl": [
+        "ts", "uid", "id.orig_h", "id.orig_p", "id.resp_h", "id.resp_p",
+        "version", "cipher", "resumed", "last_alert",
+        "next_protocol", "established", "ssl_history",
+        "cert_chain_fps", "client_cert_chain_fps",
+    ],
+    "syslog": [
+        "ts", "uid", "id.orig_h", "id.orig_p",
+        "id.resp_h", "id.resp_p", "proto",
+        "facility", "severity", "message",
+    ],
 }
 
 
@@ -184,5 +189,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 

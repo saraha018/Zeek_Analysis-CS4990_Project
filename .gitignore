@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Data files
+data/pcap/*.pcap
+data/pcap/*.pcapng
+data/zeek_logs/
+data/features/*.csv
+data/models/*.pkl
+data/models/*.json
+data/models/*.csv
+data/models/*.png
+
+# Sample data directories (numbered folders)
+[0-9]/
+[0-9][0-9]/
+
+# Ground truth files (may contain sensitive data)
+*_GT.csv
+*ground_truth*.csv
+NUSW-NB15_GT.csv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+*.temp
+

@@ -37,11 +37,6 @@ data/models/*.png
 [0-9]/
 [0-9][0-9]/
 
-# Ground truth files (may contain sensitive data)
-*_GT.csv
-*ground_truth*.csv
-NUSW-NB15_GT.csv
-
 # Jupyter Notebook
 .ipynb_checkpoints
 

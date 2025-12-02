@@ -23,8 +23,6 @@ zeek-ml-classifier/
 ├── extract_features_from_csv.py    # Extract features from CSV logs and match with ground truth
 ├── train_model.py                  # Train ML classifier
 ├── predict.py                      # Predict on new PCAP files
-├── inspect_csv_structure.py        # Helper: Inspect CSV file structure
-├── analyze_data_structure.py       # Helper: Analyze data structure and matching
 ├── utils/
 │   ├── __init__.py
 │   └── feature_engineering.py     # Feature engineering utilities
@@ -60,11 +58,13 @@ pip3 install -r requirements.txt
 If you have Zeek `.log` files instead of CSV files, convert them first:
 
 **Option A: Convert all fields (full conversion)**
+
 ```bash
 python3 zeek_log_to_csv.py path/to/conn.log output/conn.csv
 ```
 
 **Option B: Convert with filtered important fields (recommended)**
+
 ```bash
 python3 zeek_log_to_csvfeatures.py path/to/conn.log
 # Outputs: conn.csv (in current directory)
@@ -220,50 +220,29 @@ The Random Forest classifier provides:
 - ROC-AUC metrics
 - Classification reports
 
-## Helper Scripts
-
 ### Zeek Log Conversion
 
 **`zeek_log_to_csv.py`** - Convert Zeek `.log` files to CSV format (all fields)
+
 ```bash
 python3 zeek_log_to_csv.py input.log output.csv
 ```
+
 - Converts a single Zeek log file to CSV
 - Preserves all fields from the original log
 - Useful when you need complete data
 
 **`zeek_log_to_csvfeatures.py`** - Convert Zeek logs to CSV with filtered important fields
+
 ```bash
 python3 zeek_log_to_csvfeatures.py conn.log
 # Automatically creates conn.csv in current directory
 ```
+
 - Converts Zeek logs to CSV but keeps only important fields per log type
 - Reduces file size and focuses on relevant features
 - Automatically detects log type from filename (conn.log → conn, dns.log → dns, etc.)
 - Recommended for most use cases
-
-### Data Inspection
-
-**`inspect_csv_structure.py`** - Inspect CSV file structure and contents
-```bash
-# Inspect a single CSV file
-python3 inspect_csv_structure.py --csv path/to/file.csv
-
-# Inspect multiple files in a directory
-python3 inspect_csv_structure.py --csv-dir data/zeek_logs
-```
-- Shows column names, data types, sample rows
-- Useful for understanding CSV format before feature extraction
-
-**`analyze_data_structure.py`** - Analyze data structure and matching compatibility
-```bash
-python3 analyze_data_structure.py data/zeek_logs path/to/ground_truth.csv
-```
-- Compares CSV files with ground truth file
-- Checks IP address overlap (for IP-based matching)
-- Checks timestamp overlap (for timestamp-based matching)
-- Provides recommendations on which matching mode to use
-- Useful for troubleshooting matching issues
 
 ## Notes
 
